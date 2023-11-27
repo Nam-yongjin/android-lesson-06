@@ -1,5 +1,7 @@
 package kr.easw.lesson06.controller;
 
+import kr.easw.lesson06.model.dto.TextDataDto;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,9 @@ import java.util.List;
 public class UserDataEndpoint {
     // 원래대로라면 리스트를 통해 JSON에서 사용할 수 있는 형태로 변환해야 하지만, 이번 실습에서는 건너뜁니다.
     @GetMapping("/list")
-    public List<String> listUsers() {
-        throw new RuntimeException("이곳에 유저 목록을 반환하는 코드를 작성하십시오.");
+    public List<TextDataDto> listUsers() {
+        DataRestEndpoint textDataService = null;
+        return textDataService.listText();
     }
 
     // 원래대로라면 리스트를 통해 JSON에서 사용할 수 있는 형태로 변환해야 하지만, 이번 실습에서는 건너뜁니다.
