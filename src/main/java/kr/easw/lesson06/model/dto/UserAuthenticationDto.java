@@ -8,6 +8,7 @@ import lombok.Getter;
 public class UserAuthenticationDto {
     private final String token;
 
-    public UserAuthenticationDto(String s) {
+    public UserAuthenticationDto(String s, String token) {
+        this.token = token;
     }
 }

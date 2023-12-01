@@ -55,9 +55,10 @@ public class UserDataService {
         if (entity.isEmpty()) throw new BadCredentialsException("Credentials invalid");
         UserDataEntity archivedEntity = entity.get();
         // 만약 유저가 존재한다면, 비밀번호를 비교합니다.
+        String token = null;
         if (encoder.matches(userDataEntity.getPassword(), archivedEntity.getPassword()))
             // 만약 비밀번호가 일치한다면, 토큰을 생성하여 반환합니다.
-            return new UserAuthenticationDto(jwtService.generateToken(archivedEntity.getUserId()));
+            return new UserAuthenticationDto(jwtService.generateToken(archivedEntity.getUserId()), token);
         // 만약 비밀번호가 일치하지 않는다면, BadCredentialsException을 던집니다.
         throw new BadCredentialsException("Credentials invalid");
     }
