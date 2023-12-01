@@ -21,6 +21,12 @@ public class UserDataService {
 
     private final JwtService jwtService;
 
+    public UserDataService(UserDataRepository repository, BCryptPasswordEncoder encoder, JwtService jwtService) {
+        this.repository = repository;
+        this.encoder = encoder;
+        this.jwtService = jwtService;
+    }
+
     // @PostConstruct 어노테이션을 사용하여 이 메서드가 빈 생성 후에 실행되도록 합니다.
     @PostConstruct
     public void init() {

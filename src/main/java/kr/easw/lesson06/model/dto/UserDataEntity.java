@@ -24,4 +24,14 @@ public class UserDataEntity {
     @Getter
     private boolean isAdmin;
 
+    public UserDataEntity(long l, String userId, String password, boolean b) {
+    }
+
+    public String getPassword() {
+        return null;
+    }
+
+    public String getUserId() {
+        return null;
+    }
 }
